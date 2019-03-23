@@ -27,6 +27,9 @@
 
 </head>
 
+
+
+
 <body>
 	<div id="booking" class="section">
 		
@@ -35,15 +38,16 @@
 					<div class="booking-form">
 						<div class="form-header">
 							<h1>Make your reservation</h1>
+                            <?php  echo $_GET['price'];?>
 						</div>
-						<form>
+						<form action="getPrice.php" method="post">
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
-										<select class="form-control" required>
+										<select class="form-control" name="package" required>
 											<option value="" selected hidden>no of rooms</option>
-											<option>Faculty Delegate </option>
-											<option>Student Delegate</option>
+											<option  value="1">Faculty Delegate </option>
+											<option  value="2">Student Delegate</option>
 										</select>
 										<span class="select-arrow"></span>
 										<span class="form-label">Rooms</span>
@@ -51,14 +55,14 @@
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
-                                        <input class="form-control" type="checkbox" name="AcPerson" value="1" placeholder="Do u have Accompanying Person">
+                                        <input class="form-control" type="checkbox" name="checkAccompany" value="1" placeholder="Do u have Accompanying Person">
                                         <span class="form-label mycheckbox">Do u have Accompanying Person</span>
                                     </div>
                                     
 								</div>
 							</div>
 							<div class="form-btn">
-								<button class="submit-btn">Show Price</button>
+								<button type="submit" name="submit" class="submit-btn">Show Price</button>
 							</div>
                         </form>
                     </div>
